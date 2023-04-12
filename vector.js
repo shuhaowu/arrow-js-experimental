@@ -160,6 +160,15 @@ class Vector {
     slice(begin, end) {
         return new Vector((0, vector_js_1.clampRange)(this, begin, end, ({ data, _offsets }, begin, end) => (0, chunk_js_1.sliceChunks)(data, _offsets, begin, end)));
     }
+    filter(callback) {
+        const filteredElements = [];
+        for (const elem of this) {
+            if (callback(elem)) {
+                filteredElements.push(elem);
+            }
+        }
+        return filteredElements;
+    }
     toJSON() { return [...this]; }
     /**
      * Return a JavaScript Array or TypedArray of the Vector's elements.

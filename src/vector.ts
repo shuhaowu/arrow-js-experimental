@@ -238,6 +238,17 @@ export class Vector<T extends DataType = any> {
         ));
     }
 
+    public filter(callback: (elem: T["TValue"]) => boolean): T["TValue"][] {
+        const filteredElements: T["TValue"][] = [];
+        for (const elem of this) {
+            if (callback(elem)) {
+                filteredElements.push(elem)
+            }
+        }
+
+        return filteredElements;
+    }
+
     public toJSON() { return [...this]; }
 
     /**

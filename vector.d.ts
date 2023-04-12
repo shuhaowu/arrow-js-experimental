@@ -107,6 +107,7 @@ export declare class Vector<T extends DataType = any> {
      * @param end The end of the specified portion of the Vector. This is exclusive of the element at the index 'end'.
      */
     slice(begin?: number, end?: number): Vector<T>;
+    filter(callback: (elem: T["TValue"]) => boolean): T["TValue"][];
     toJSON(): (T["TValue"] | null)[];
     /**
      * Return a JavaScript Array or TypedArray of the Vector's elements.
