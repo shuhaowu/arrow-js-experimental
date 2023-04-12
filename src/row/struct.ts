@@ -111,7 +111,7 @@ class StructRowIterator<T extends TypeMap = any>
 }
 
 Object.defineProperties(StructRow.prototype, {
-    [Symbol.toStringTag]: { enumerable: false, configurable: false, value: 'Row' },
+    [Symbol.toStringTag]: { enumerable: false, configurable: false, value: 'Object' },
     [kParent]: { writable: true, enumerable: false, configurable: false, value: null },
     [kRowIndex]: { writable: true, enumerable: false, configurable: false, value: -1 },
 });

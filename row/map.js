@@ -119,7 +119,7 @@ class MapRowProxyHandler {
     }
 }
 Object.defineProperties(MapRow.prototype, {
-    [Symbol.toStringTag]: { enumerable: false, configurable: false, value: 'Row' },
+    [Symbol.toStringTag]: { enumerable: false, configurable: false, value: 'Object' },
     [exports.kKeys]: { writable: true, enumerable: false, configurable: false, value: null },
     [exports.kVals]: { writable: true, enumerable: false, configurable: false, value: null },
 });

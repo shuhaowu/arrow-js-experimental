@@ -146,7 +146,7 @@ class MapRowProxyHandler<K extends DataType = any, V extends DataType = any> imp
 }
 
 Object.defineProperties(MapRow.prototype, {
-    [Symbol.toStringTag]: { enumerable: false, configurable: false, value: 'Row' },
+    [Symbol.toStringTag]: { enumerable: false, configurable: false, value: 'Object' }, // Not sure if this is correct.
     [kKeys]: { writable: true, enumerable: false, configurable: false, value: null },
     [kVals]: { writable: true, enumerable: false, configurable: false, value: null },
 });
