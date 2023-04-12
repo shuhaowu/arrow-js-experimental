@@ -14,7 +14,7 @@ export declare class StructRow<T extends TypeMap = any> {
     toArray(): T[string]["TValue"][];
     toJSON(): { [P in string & keyof T]: T[P]["TValue"]; };
     toString(): string;
-    [Symbol.iterator](): IterableIterator<[
+    iterator(): IterableIterator<[
         keyof T,
         {
             [P in keyof T]: T[P]['TValue'] | null;

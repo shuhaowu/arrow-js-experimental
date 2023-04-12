@@ -56,7 +56,7 @@ export class StructRow<T extends TypeMap = any> {
     }
 
     public toString() {
-        return `{${[...this].map(([key, val]) =>
+        return `{${[...this.iterator()].map(([key, val]) =>
             `${valueToString(key)}: ${valueToString(val)}`
         ).join(', ')
             }}`;
@@ -66,7 +66,7 @@ export class StructRow<T extends TypeMap = any> {
         return this.toString();
     }
 
-    [Symbol.iterator](): IterableIterator<[
+    iterator(): IterableIterator<[
         keyof T, { [P in keyof T]: T[P]['TValue'] | null }[keyof T]
     ]> {
         return new StructRowIterator(this[kParent], this[kRowIndex]);

@@ -37,12 +37,12 @@ export class StructRow {
         return json;
     }
     toString() {
-        return `{${[...this].map(([key, val]) => `${valueToString(key)}: ${valueToString(val)}`).join(', ')}}`;
+        return `{${[...this.iterator()].map(([key, val]) => `${valueToString(key)}: ${valueToString(val)}`).join(', ')}}`;
     }
     [Symbol.for('nodejs.util.inspect.custom')]() {
         return this.toString();
     }
-    [Symbol.iterator]() {
+    iterator() {
         return new StructRowIterator(this[kParent], this[kRowIndex]);
     }
 }

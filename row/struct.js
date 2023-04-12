@@ -40,12 +40,12 @@ class StructRow {
         return json;
     }
     toString() {
-        return `{${[...this].map(([key, val]) => `${(0, pretty_js_1.valueToString)(key)}: ${(0, pretty_js_1.valueToString)(val)}`).join(', ')}}`;
+        return `{${[...this.iterator()].map(([key, val]) => `${(0, pretty_js_1.valueToString)(key)}: ${(0, pretty_js_1.valueToString)(val)}`).join(', ')}}`;
     }
     [Symbol.for('nodejs.util.inspect.custom')]() {
         return this.toString();
     }
-    [Symbol.iterator]() {
+    iterator() {
         return new StructRowIterator(this[kParent], this[kRowIndex]);
     }
 }

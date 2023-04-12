@@ -253,7 +253,7 @@ function measureColumnWidths(rowId, batch, maxColWidths = []) {
             continue;
         }
         maxColWidths[j = 0] = Math.max(maxColWidths[0] || 0, (`${rowId++}`).length);
-        for (val of row) {
+        for (val of row.iterator()) {
             if (val && typedArrayElementWidths.has(val.constructor) && (typeof val[Symbol.toPrimitive] !== 'function')) {
                 // If we're printing a column of TypedArrays, ensure the column is wide enough to accommodate
                 // the widest possible element for a given byte size, since JS omits leading zeroes. For example:
